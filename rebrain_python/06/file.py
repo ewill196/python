@@ -9,6 +9,20 @@ path = '/home/ewill/python/rebrain_python/06/'
 #print(text)
 #f.close()
 
-w_file = open(path+'out.txt', 'w')
-w_file.writelines(['line1\n','line2\n', 'line3\n']) #список строк
-w_file.close()
+#w_file = open(path+'out.txt', 'w')
+#w_file.writelines(['line1\n','line2\n', 'line3\n']) #список строк
+#w_file.close()
+
+with open(path+'in.txt') as f:
+    words = f.read()
+    words = words.split()
+    print(words)
+
+frequency = {}
+for w in words:
+    for ch in w:
+        if ch in frequency:
+            frequency[ch] += 1
+        else:
+            frequency[ch] = 0
+print(frequency)
