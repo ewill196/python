@@ -25,4 +25,6 @@ for w in words:
             frequency[ch] += 1
         else:
             frequency[ch] = 0
-print(frequency)
+#print(frequency)
+
+print(*sorted([(i[1], i[0]) for i in frequency.items()], reverse=True), sep='\n')
